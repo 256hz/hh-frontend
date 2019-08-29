@@ -1,6 +1,6 @@
 import React from 'react';
-import RandomButton from './RandomButton'
-import ColorList from './ColorList'
+import RandomButton from './RandomButton';
+import ColorList from './ColorList';
 import '../App.css';
 
 const Sidebar = () => {
@@ -9,7 +9,7 @@ const Sidebar = () => {
       <RandomButton />
       <ColorList />
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar
