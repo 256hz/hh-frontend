@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 import Viewport from './Viewport'
 import '../App.css';
 
-export default function App() {
+const Page = () => {
   return (
     <div className="App">
       <Sidebar />
@@ -11,3 +11,5 @@ export default function App() {
     </div>
   )
 }
+
+export default Page
