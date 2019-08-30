@@ -3,7 +3,7 @@ import '../App.css';
 
 const ColorFilters = () => {
   return (
-    <div className="colorlist">
+    <div className="color-filters">
       Red <br />
       Orange <br />
       Yellow <br />
