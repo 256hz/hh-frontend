@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const ColorList = () => {
+const ColorFilters = () => {
   return (
     <div className="colorlist">
       Red <br />
@@ -16,4 +16,4 @@ const ColorList = () => {
   )
 }
 
-export default ColorList
+export default ColorFilters

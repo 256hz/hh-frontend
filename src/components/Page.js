@@ -5,7 +5,7 @@ import '../App.css';
 
 const Page = () => {
   return (
-    <div className="App">
+    <div className="page">
       <Sidebar />
       <Viewport />
     </div>
