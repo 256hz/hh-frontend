@@ -20,7 +20,7 @@ class App extends React.Component {
 
   render() {
     if (this.state.colors) {
-      console.log("App colors length:", this.state.colors.length)
+      // console.log("App colors length:", this.state.colors.length)
       return(
         <div className="App">
           <Header />

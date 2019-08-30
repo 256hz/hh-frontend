@@ -5,7 +5,7 @@ import '../App.css';
 
 const Page = (props) => {
   if (props.allColors.length > 0) {
-    console.log("Page allColors length:", props.allColors.length)
+    // console.log("Page allColors length:", props.allColors.length)
     return (
       <div className="page">
         <Sidebar />
