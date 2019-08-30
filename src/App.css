@@ -1,6 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   height: 100vh;
   width: 100vw;
+}
+
+.colorlist {
+  text-align: left;
+  margin-left: 50px;
+  font-size: 1.25em;
+  line-height: 2em;
+  text-decoration: none;
 }
 
 .header {
@@ -18,23 +32,30 @@
   margin: auto 25px;
 }
 
+.randombutton {
+  margin: 50px auto 25px;
+  width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 1em;
+}
+
 .search {
-  height: 25px;
+  width: 180px;
+  height: 40px;
   margin: auto 25px;
   border-radius: 5px;
   border: none;
+  font-size: 1em;
 }
 
 .sidebar {
   height: 100%;
   width: 25%;
-  background-color: rgb(150,150,151);
+  background-color: rgb(214,214,216);
   text-align: center;
   align-content: center;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Source Serif Pro', serif;
 }

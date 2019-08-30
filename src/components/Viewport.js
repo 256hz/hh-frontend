@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-const Sidebar = () => {
+const Viewport = () => {
   return (
     <div>
       Hello
@@ -9,4 +9,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default Viewport

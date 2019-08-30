@@ -3,8 +3,8 @@ import '../App.css';
 
 const RandomButton = () => {
   return (
-    <div className="randombutton">
-      Random
+    <div>
+      <button className="randombutton">Random Color</button>
     </div>
   )
 }
