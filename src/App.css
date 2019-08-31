@@ -8,10 +8,6 @@ html, body {
   height: 100%;
 }
 
-body {
-  position: relative;
-}
-
 .App {
   min-height: 100%;
   width: 100%;
