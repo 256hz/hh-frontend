@@ -12,24 +12,27 @@ class App extends React.Component {
       filter: null,
       filteredColors: null
     }
-  }
-
-  componentDidMount() {
     fetch(this.state.apiUrl)
       .then( res => res.json() )
       .then( allColors => this.setState({ allColors }) )
       .then( _ => this.setState({filteredColors: this.state.allColors}) )
   }
 
+  componentDidMount() {
+  }
+
   filterColors = (filter) => {
+    console.log({filter})
+    console.log(this.state.filter)
     filter === this.state.filter
-      ? this.setState({filter: null})
-      : this.setState({filter})
-    this.setState({filter})
-    console.log('filter triggered:', this.state.filter)
-    filter !== null
-      ? this.setState({filteredColors: this.state.allColors.filter( color => color.family === filter)})
-      : this.setState({filteredColors: this.state.allColors})
+      ? this.setState({ filter: null })
+      : this.setState({ filter: filter })
+    setTimeout(_ => {
+      console.log('filter triggered:', this.state.filter)
+      this.state.filter
+        ? this.setState({filteredColors: this.state.allColors.filter( color => color.family === this.state.filter )})
+        : this.setState({filteredColors: this.state.allColors})  
+    }, 10)
   }
 
   render() {
