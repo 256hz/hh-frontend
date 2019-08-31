@@ -42,6 +42,10 @@ html, body {
   width: 100%;
 }
 
+.pagination {
+  margin: auto;
+}
+
 .randombutton {
   margin: 0px auto 50px;
   width: 100%;

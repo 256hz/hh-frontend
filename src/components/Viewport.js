@@ -13,7 +13,6 @@ class Viewport extends React.Component {
       pageColors: [],
       color: null
     }
-    // console.log("Viewport allColors length:", this.state.allColors.length)
   }
   
   componentDidMount() {
@@ -22,16 +21,17 @@ class Viewport extends React.Component {
 
   setPageColors = () => {
     const num = this.state.perPage
-    // this.setState({ allColors: this.props.allColors })
-    // console.log('viewort allColors slice:', this.state.allColors.slice(0,15))
     this.setState({
       pageColors: this.state.allColors.slice(
         (this.state.page - 1) * num, 
         (this.state.page - 1) * num + num
       )
     })
-      
-  }  
+  }
+
+  changePage = (page) => {
+    this.setState({ page })
+  }
 
   render() {
     return (this.state.pageColors)
