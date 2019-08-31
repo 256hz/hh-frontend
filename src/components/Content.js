@@ -4,12 +4,12 @@ import Viewport from './Viewport'
 import '../App.css';
 
 const Page = (props) => {
-  if (props.allColors.length > 0) {
+  if (props.colors) {
     // console.log("Page allColors length:", props.allColors.length)
     return (
       <div className="page">
-        <Sidebar />
-        <Viewport allColors={props.allColors} />
+        <Sidebar filterColors={props.filterColors} />
+        <Viewport colors={props.colors} />
       </div>
     )
   } else {

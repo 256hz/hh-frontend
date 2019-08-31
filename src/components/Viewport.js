@@ -8,21 +8,21 @@ class Viewport extends React.Component {
     super(props)
     this.state={
       page: 1,
-      allColors: props.allColors,
       perPage: 12,
-      pageColors: [],
+      pageColors: null,
       color: null
     }
   }
   
-  componentDidMount() {
-    this.props.allColors && this.setPageColors()
+  componentDidUpdate() {
+    this.setPageColors()
   }
 
   setPageColors = () => {
+    console.log('setPageColors hit')
     const num = this.state.perPage
     this.setState({
-      pageColors: this.state.allColors.slice(
+      pageColors: this.props.colors.slice(
         (this.state.page - 1) * num, 
         (this.state.page - 1) * num + num
       )
@@ -34,7 +34,7 @@ class Viewport extends React.Component {
   }
 
   render() {
-    return (this.state.pageColors)
+    return (this.state.colors)
       ? (
           <div className="viewport">
             {this.state.color 

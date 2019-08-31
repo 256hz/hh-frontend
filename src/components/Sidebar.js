@@ -3,11 +3,11 @@ import RandomButton from './RandomButton';
 import ColorFilters from './ColorFilters';
 import '../App.css';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
   return (
     <div className="sidebar">
       <RandomButton />
-      <ColorFilters />
+      <ColorFilters filterColors={props.filterColors} />
     </div>
   );
 };
