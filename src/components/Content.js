@@ -9,22 +9,24 @@ class Content extends React.Component {
     this.state={
       page: 1,
       perPage: 12,
-      colors: this.props.colors,
+      colorsFiltered: this.props.colorsFiltered,
       pageColors: null,
       color: null,
     }
   }
 
-  componentDidMount() {
-    this.setState({colors: this.props.colors})
-    setTimeout(_ => this.setPageColors(), 0)
+  componentDidUpdate() {
+    if (this.props.colorsFiltered !== this.state.colorsFiltered) {
+      this.setState({colorsFiltered: this.props.colorsFiltered})
+      setTimeout(_ => this.setPageColors(), 0)
+    }
   }
 
   setPageColors = () => {
     console.log('setPageColors hit')
     const perPage = this.state.perPage
     this.setState({
-      pageColors: this.props.colors.slice(
+      pageColors: this.state.colorsFiltered.slice(
         this.state.page * perPage, 
         this.state.page * perPage + perPage
       )
@@ -36,7 +38,7 @@ class Content extends React.Component {
   }
 
   render() {
-    if (this.props.colors) {
+    if (this.props.colorsFiltered) {
       return (
         <div className="page">
           <Sidebar filterColors={this.props.filterColors} />

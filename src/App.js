@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './components/Header'
-import Content from './components/Content'  
+import Header from './components/Header';
+import Content from './components/Content';  
 import './App.css';
 
 class App extends React.Component {
@@ -14,8 +14,7 @@ class App extends React.Component {
     }
     fetch(this.state.apiUrl)
       .then( res => res.json() )
-      .then( colorsAll => this.setState({ colorsAll }) )
-      .then( _ => this.setState({colorsFiltered: this.state.colorsAll}) )
+      .then( colorsAll => this.setState({ colorsAll, colorsFiltered: colorsAll }) )
   }
 
   componentDidMount() {
@@ -40,7 +39,7 @@ class App extends React.Component {
       return(
         <div className="App">
           <Header />
-          <Content colors={this.state.colorsFiltered} 
+          <Content colorsFiltered={this.state.colorsFiltered} 
             filterColors={this.filterColors}
           />
         </div>
