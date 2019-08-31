@@ -1,17 +1,7 @@
 import React from 'react';
 import { capitalize } from 'lodash'
+import { filters } from '../constants'
 import '../App.css';
-
-const filters = [
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'purple',
-  'brown',
-  'gray'
-]
 
 const ColorFilters = (props) => {
   return (

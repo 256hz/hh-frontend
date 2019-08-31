@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header'
-import Content from './components/Content'
+import Content from './components/Content'  
 import './App.css';
 
 class App extends React.Component {
@@ -8,14 +8,14 @@ class App extends React.Component {
     super()
     this.state={
       apiUrl: 'http://localhost:3000/',
-      allColors: [],
+      colorsAll: [],
       filter: null,
-      filteredColors: null
+      colorsFiltered: null
     }
     fetch(this.state.apiUrl)
       .then( res => res.json() )
-      .then( allColors => this.setState({ allColors }) )
-      .then( _ => this.setState({filteredColors: this.state.allColors}) )
+      .then( colorsAll => this.setState({ colorsAll }) )
+      .then( _ => this.setState({colorsFiltered: this.state.colorsAll}) )
   }
 
   componentDidMount() {
@@ -30,17 +30,17 @@ class App extends React.Component {
     setTimeout(_ => {
       console.log('filter triggered:', this.state.filter)
       this.state.filter
-        ? this.setState({filteredColors: this.state.allColors.filter( color => color.family === this.state.filter )})
-        : this.setState({filteredColors: this.state.allColors})  
+        ? this.setState({colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.filter )})
+        : this.setState({colorsFiltered: this.state.colorsAll})  
     }, 0)
   }
 
   render() {
-    if (this.state.filteredColors) {
+    if (this.state.colorsFiltered) {
       return(
         <div className="App">
           <Header />
-          <Content colors={this.state.filteredColors} 
+          <Content colors={this.state.colorsFiltered} 
             filterColors={this.filterColors}
           />
         </div>

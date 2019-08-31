@@ -3,7 +3,7 @@ import Sidebar from './Sidebar'
 import Viewport from './Viewport'
 import '../App.css';
 
-class Page extends React.Component {
+class Content extends React.Component {
   constructor(props) {
     super(props)
     this.state={
@@ -57,4 +57,4 @@ class Page extends React.Component {
   }
 }
 
-export default Page
+export default Content
