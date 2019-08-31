@@ -9,11 +9,11 @@ export default function Header(props) {
   return(
     <div className="header">
       <img src={logo} 
-           className="logo" 
+           className="header__logo" 
            alt="Helpful Human logo"
       />
       <input value={search}
-             className="search"
+             className="header__search"
              placeholder="  Search"
              onChange={ev => setSearch(ev.target.value)}
              onSubmit={ev => submitSearch(ev.target.value)}
