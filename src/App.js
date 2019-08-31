@@ -32,7 +32,7 @@ class App extends React.Component {
       this.state.filter
         ? this.setState({filteredColors: this.state.allColors.filter( color => color.family === this.state.filter )})
         : this.setState({filteredColors: this.state.allColors})  
-    }, 10)
+    }, 1)
   }
 
   render() {
