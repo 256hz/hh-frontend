@@ -8,7 +8,8 @@ class App extends React.Component {
     super()
     this.state={
       apiUrl: 'http://localhost:3000/',
-      colors: []
+      colors: [],
+      filter: ''
     }
   }
 

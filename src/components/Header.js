@@ -13,7 +13,7 @@ export default function Header(props) {
            alt="Helpful Human logo"
       />
       <input value={search}
-             className="search"
+             className="header__search"
              placeholder="  Search"
              onChange={ev => setSearch(ev.target.value)}
              onSubmit={ev => submitSearch(ev.target.value)}

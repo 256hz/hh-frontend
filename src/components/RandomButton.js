@@ -4,7 +4,7 @@ import '../App.css';
 const RandomButton = () => {
   return (
     <div>
-      <button className="randombutton">Random Color</button>
+      <button className="sidebar__button-random">Random Color</button>
     </div>
   )
 }
