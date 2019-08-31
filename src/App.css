@@ -1,3 +1,8 @@
+:root {
+  --radii: 5px;
+  --inner-radii: calc(var(--radii) - 1px);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -43,14 +48,14 @@ html, body {
 }
 
 .pagination {
-  margin: auto;
+  padding: auto;
 }
 
 .randombutton {
   margin: 0px auto 50px;
   width: 100%;
   height: 40px;
-  border-radius: 5px;
+  border-radius: var(--radii);
   border: 1px solid black;
   background-color: white;
   font-size: 1em;
@@ -60,13 +65,12 @@ html, body {
   width: 180px;
   height: 40px;
   margin: auto 25px;
-  border-radius: 5px;
+  border-radius: var(--radii);
   border: none;
   font-size: 1em;
 }
 
 .sidebar {
-  /* min-height: 100%; */
   flex-shrink: 0;
   max-width: 350px;
   min-width: 200px;
@@ -102,8 +106,12 @@ html, body {
   width: 100%;
   height: 80%;
   overflow: hidden;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: var(--inner-radii);
+  border-top-right-radius: var(--inner-radii);
+}
+
+.swatch__title {
+  align-self: auto;
 }
 
 .viewport {

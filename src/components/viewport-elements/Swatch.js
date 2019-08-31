@@ -6,7 +6,7 @@ const Swatch = (props) => {
   return (
     <div className="swatch">
       <div className="swatch__color" style={{backgroundColor: `#${props.color}`}}></div>
-      <span>#{props.color}</span>
+      <div className="swatch__title">#{props.color}</div>
     </div>
   )
 }
