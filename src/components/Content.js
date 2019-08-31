@@ -15,13 +15,18 @@ class Page extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({colors: this.props.colors})
+    setTimeout(_ => this.setPageColors(), 0)
+  }
+
   setPageColors = () => {
     console.log('setPageColors hit')
-    const num = this.state.perPage
+    const perPage = this.state.perPage
     this.setState({
       pageColors: this.props.colors.slice(
-        (this.state.page - 1) * num, 
-        (this.state.page - 1) * num + num
+        this.state.page * perPage, 
+        this.state.page * perPage + perPage
       )
     })
   }
@@ -35,9 +40,9 @@ class Page extends React.Component {
       return (
         <div className="page">
           <Sidebar filterColors={this.props.filterColors} />
-          {this.props.pageColors
+          {this.state.pageColors
             ? <Viewport 
-                colors={this.state.pageColors} 
+                pageColors={this.state.pageColors} 
                 changePage={this.changePage}
                 page={this.state.page}
               />

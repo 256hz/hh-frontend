@@ -6,25 +6,9 @@
   --swatch-width: calc( (100vw - var(--sidebar-width))/4 - var(--gutter-width))
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
 .App {
   min-height: 100%;
   width: 100%;
-}
-
-.color-filters {
-  text-align: left;
-  font-size: 1.25em;
-  line-height: 2em;
-  text-decoration: none;
 }
 
 .header {
@@ -42,6 +26,15 @@ html, body {
   margin: auto auto auto 25px;
 }
 
+.header__search {
+  width: 180px;
+  height: 40px;
+  margin: auto 25px;
+  border-radius: var(--radii);
+  border: none;
+  font-size: 1em;
+}
+
 .page {
   display: flex;
   flex-grow: 1;
@@ -50,9 +43,9 @@ html, body {
 }
 
 .pagination {
-  display: block;
-  clear: both;
-  padding: auto;
+  width: 100%;
+  height: 50px;
+  text-align: center;
 }
 
 .sidebar__button-random {
@@ -65,13 +58,11 @@ html, body {
   font-size: 1em;
 }
 
-.header__search {
-  width: 180px;
-  height: 40px;
-  margin: auto 25px;
-  border-radius: var(--radii);
-  border: none;
-  font-size: 1em;
+.sidebar__color-filters {
+  text-align: left;
+  font-size: 1.25em;
+  line-height: 2em;
+  text-decoration: none;
 }
 
 .sidebar {

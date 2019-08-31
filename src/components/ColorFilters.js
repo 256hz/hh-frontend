@@ -15,7 +15,7 @@ const filters = [
 
 const ColorFilters = (props) => {
   return (
-    <div className="color-filters">
+    <div className="sidebar__color-filters">
       {filters.map( (filter) => {
         return(
           <div onClick={_ => props.filterColors(filter)}

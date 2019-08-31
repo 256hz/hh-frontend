@@ -4,12 +4,12 @@ import ColorPage from './viewport-elements/ColorPage'
 import '../App.css';
 
 const Viewport = (props) => {
-  return (props.colors)
+  return (props.pageColors)
     ? (
         <div className="viewport">
           {props.color 
             ? <HeroColor color={props.color} />
-            : <ColorPage pageColors={props.colors} 
+            : <ColorPage pageColors={props.pageColors} 
                 changePage={props.changePage} 
                 page={props.page}
               />

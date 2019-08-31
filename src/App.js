@@ -23,7 +23,7 @@ class App extends React.Component {
 
   filterColors = (filter) => {
     console.log({filter})
-    console.log(this.state.filter)
+    console.log('old filter:', this.state.filter)
     filter === this.state.filter
       ? this.setState({ filter: null })
       : this.setState({ filter: filter })
