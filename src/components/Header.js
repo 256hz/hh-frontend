@@ -9,7 +9,7 @@ export default function Header(props) {
   return(
     <div className="header">
       <img src={logo} 
-           className="logo" 
+           className="header__logo" 
            alt="Helpful Human logo"
       />
       <input value={search}

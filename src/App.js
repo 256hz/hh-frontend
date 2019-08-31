@@ -32,12 +32,11 @@ class App extends React.Component {
       this.state.filter
         ? this.setState({filteredColors: this.state.allColors.filter( color => color.family === this.state.filter )})
         : this.setState({filteredColors: this.state.allColors})  
-    }, 1)
+    }, 0)
   }
 
   render() {
     if (this.state.filteredColors) {
-      // console.log("App colors length:", this.state.colors.length)
       return(
         <div className="App">
           <Header />

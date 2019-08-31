@@ -9,13 +9,10 @@ class Page extends React.Component {
     this.state={
       page: 1,
       perPage: 12,
+      colors: this.props.colors,
       pageColors: null,
-      color: null
+      color: null,
     }
-  }
-
-  componentDidMount() {
-    this.setPageColors()
   }
 
   setPageColors = () => {
@@ -38,7 +35,15 @@ class Page extends React.Component {
       return (
         <div className="page">
           <Sidebar filterColors={this.props.filterColors} />
-          <Viewport colors={this.props.colors} />
+          {this.props.pageColors
+            ? <Viewport 
+                colors={this.state.pageColors} 
+                changePage={this.changePage}
+                page={this.state.page}
+              />
+            : <div>Loading...</div>
+          }
+          
         </div>
       )
     } else {

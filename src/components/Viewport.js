@@ -9,7 +9,10 @@ const Viewport = (props) => {
         <div className="viewport">
           {props.color 
             ? <HeroColor color={props.color} />
-            : <ColorPage pageColors={props.colors} />
+            : <ColorPage pageColors={props.colors} 
+                changePage={props.changePage} 
+                page={props.page}
+              />
           }
         </div>
       )
