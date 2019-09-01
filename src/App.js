@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './components/Header'
-import Content from './components/Content'
+import Header from './components/Header';
+import Content from './components/Content';  
 import './App.css';
 
 class App extends React.Component {
@@ -8,47 +8,53 @@ class App extends React.Component {
     super()
     this.state={
       apiUrl: 'http://localhost:3000/',
-      allColors: [],
-      filter: null,
-      filteredColors: null
+      colorsAll: [],
+      enabledFilter: null,
+      colorsFiltered: null
     }
     fetch(this.state.apiUrl)
       .then( res => res.json() )
-      .then( allColors => this.setState({ allColors }) )
-      .then( _ => this.setState({filteredColors: this.state.allColors}) )
+      .then( colorsAll => this.setState({ colorsAll, colorsFiltered: colorsAll }) )
   }
 
-  componentDidMount() {
-  }
-
-  filterColors = (filter) => {
-    console.log({filter})
-    console.log(this.state.filter)
-    filter === this.state.filter
-      ? this.setState({ filter: null })
-      : this.setState({ filter: filter })
+  setColorFilter = (filter) => {
+    // console.log({filter})
+    // console.log('old filter:', this.state.enabledFilter)
+    filter === this.state.enabledFilter
+      ? this.setState({ enabledFilter: null })
+      : this.setState({ enabledFilter: filter })
     setTimeout(_ => {
-      console.log('filter triggered:', this.state.filter)
-      this.state.filter
-        ? this.setState({filteredColors: this.state.allColors.filter( color => color.family === this.state.filter )})
-        : this.setState({filteredColors: this.state.allColors})  
+      // console.log('filter triggered:', this.state.enabledFilter)
+      this.state.enabledFilter
+        ? this.setState({
+            colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.enabledFilter )
+          })
+        : this.setState({ colorsFiltered: this.state.colorsAll })  
     }, 0)
   }
 
+  clearColorFilter = () => {
+    this.setState({ 
+      enabledFilter: null,
+      colorsFiltered: this.state.colorsAll
+    })
+  }
+
   render() {
-    if (this.state.filteredColors) {
+    if (this.state.colorsFiltered) {
       return(
         <div className="App">
           <Header />
-          <Content colors={this.state.filteredColors} 
-            filterColors={this.filterColors}
+          <Content colorsAll={this.state.colorsAll}
+            colorsFiltered={this.state.colorsFiltered} 
+            clearColorFilter={this.clearColorFilter}
+            enabledFilter={this.state.enabledFilter}
+            setColorFilter={this.setColorFilter}
           />
         </div>
       )
     } else {
-      return(
-        <div>Loading...</div>
-      )
+      return <div>Loading...</div>
     }
   }
 }
