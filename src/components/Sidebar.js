@@ -7,7 +7,9 @@ const Sidebar = (props) => {
   return (
     <div className="sidebar">
       <RandomButton />
-      <ColorFilters filterColors={props.filterColors} />
+      <ColorFilters filterColorsMethod={props.filterColorsMethod} 
+        enabledFilter={props.enabledFilter} 
+      />
     </div>
   );
 };

@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state={
       apiUrl: 'http://localhost:3000/',
       colorsAll: [],
-      filter: null,
+      enabledFilter: null,
       colorsFiltered: null
     }
     fetch(this.state.apiUrl)
@@ -17,16 +17,18 @@ class App extends React.Component {
       .then( colorsAll => this.setState({ colorsAll, colorsFiltered: colorsAll }) )
   }
 
-  filterColors = (filter) => {
-    // console.log({filter})
-    // console.log('old filter:', this.state.filter)
-    filter === this.state.filter
-      ? this.setState({ filter: null })
-      : this.setState({ filter: filter })
+  filterColorsMethod = (filter) => {
+    console.log({filter})
+    console.log('old filter:', this.state.enabledFilter)
+    filter === this.state.enabledFilter
+      ? this.setState({ enabledFilter: null })
+      : this.setState({ enabledFilter: filter })
     setTimeout(_ => {
-      // console.log('filter triggered:', this.state.filter)
-      this.state.filter
-        ? this.setState({colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.filter )})
+      console.log('filter triggered:', this.state.enabledFilter)
+      this.state.enabledFilter
+        ? this.setState({
+            colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.enabledFilter )
+          })
         : this.setState({colorsFiltered: this.state.colorsAll})  
     }, 0)
   }
@@ -37,14 +39,13 @@ class App extends React.Component {
         <div className="App">
           <Header />
           <Content colorsFiltered={this.state.colorsFiltered} 
-            filterColors={this.filterColors}
+            filterColorsMethod={this.filterColorsMethod}
+            enabledFilter={this.state.enabledFilter}
           />
         </div>
       )
     } else {
-      return(
-        <div>Loading...</div>
-      )
+      return <div>Loading...</div>
     }
   }
 }

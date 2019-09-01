@@ -17,8 +17,13 @@ class Content extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ colorsFiltered: this.props.colorsFiltered })
-    setTimeout(_ => this.setPageList(), 0)
+    if (this.props.colorsFiltered !== this.state.colorsFiltered) {
+      this.setState({ colorsFiltered: this.props.colorsFiltered })
+      setTimeout(_ => {
+        this.setPageColors()
+        this.setPageList()
+      }, 0)
+    }
   }
 
   componentDidUpdate() {
@@ -26,14 +31,14 @@ class Content extends React.Component {
       this.setState({colorsFiltered: this.props.colorsFiltered})
       setTimeout(_ => {
         this.setPageList()
+        this.setPageColors()
         this.setState({ page: 0 })
       }, 0)
     }
-    setTimeout(_ => this.setPageColors(), 0)
   }
 
   setPageColors = () => {
-    // console.log('setPageColors hit')
+    console.log('setPageColors hit')
     const { page, perPage, colorsFiltered } = this.state
     this.setState({
       currentPage: colorsFiltered.slice(
@@ -55,19 +60,20 @@ class Content extends React.Component {
 
   changePage = (page) => {
     this.setState({ page })
+    setTimeout(_ => this.setPageColors(), 0)
   }
 
   render() {
     if (this.props.colorsFiltered) {
       return (
         <div className="page">
-          <Sidebar filterColors={this.props.filterColors} />
+          <Sidebar filterColorsMethod={this.props.filterColorsMethod} />
           {this.state.currentPage
             ? <Viewport color={this.state.color}
                 changePage={this.changePage}
+                currentPage={this.state.currentPage}
                 page={this.state.page}
                 pageList={this.state.pageList}
-                currentPage={this.state.currentPage}
               />
             : <div>Loading...</div>
           }

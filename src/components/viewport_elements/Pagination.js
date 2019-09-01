@@ -11,27 +11,30 @@ export default function Pagination(props) {
   
   return(
     <div className="pagination">
-      <span onClick={_ => pageHome()}>
-        <span className="triangle-left"></span>
-        <span className="triangle-left"></span>
-      </span>
-      &nbsp;&nbsp;
-      <span className="triangle-left" onClick={_ => pageBack()}></span>
-      &nbsp;&nbsp;
+      <div onClick={_ => pageHome()} className="pagination__arrow">
+        <div className="triangle-left"></div>
+        <div className="triangle-left"></div>
+      </div>
+      <div className="pagination__arrow">
+        <div className="triangle-left" onClick={_ => pageBack()}></div>
+      </div>
       {pageList.map( pageNo => {
-        return <span className={pageNo === page ? "pagination__page-no__active" : "pagination__page-no"}
+        return <div className={pageNo === page + 1 ? "pagination__page-no__active" : "pagination__page-no"}
                      onClick={_ => props.changePage(pageNo - 1)}
+                     key={'page_' + pageNo}
                >
-                {pageNo}&nbsp;
-              </span>
+                {pageNo}
+              </div>
       })}
       &nbsp;&nbsp;
-      <span className="triangle-right" onClick={_ => pageNext()}></span>
+      <div className="pagination__arrow">
+        <div className="triangle-right" onClick={_ => pageNext()}></div>
+      </div>
       &nbsp;&nbsp;
-      <span onClick={_ => pageEnd()}>
-        <span className="triangle-right"></span>
-        <span className="triangle-right"></span>
-      </span>
+      <div onClick={_ => pageEnd()} className="pagination__arrow">
+        <div className="triangle-right"></div>
+        <div className="triangle-right"></div>
+      </div>
     </div>
   )
 }
