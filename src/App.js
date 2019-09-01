@@ -8,7 +8,6 @@ class App extends React.Component {
     super()
     this.state={
       apiUrl: 'http://localhost:3000/',
-      heroColor: null,
       colorsAll: [],
       enabledFilter: null,
       colorsFiltered: null
