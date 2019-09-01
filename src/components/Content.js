@@ -22,7 +22,7 @@ class Content extends React.Component {
       setTimeout(_ => {
         this.setPageColors()
         this.setPageList()
-      }, 0)
+      }, 50)
     }
   }
 
@@ -33,19 +33,19 @@ class Content extends React.Component {
         this.setPageList()
         this.setPageColors()
         this.setState({ page: 0 })
-      }, 0)
+      }, 50)
     }
   }
   
   setHeroColor = (heroColor) => {
     heroColor !== this.state.heroColor
-    ? this.setState({ heroColor })
-    : this.setState({ heroColor: null })
+      ? this.setState({ heroColor })
+      : this.setState({ heroColor: null })
   }
   
   setPage = (page) => {
     this.setState({ page })
-    setTimeout(_ => this.setPageColors(), 0)
+    setTimeout(_ => this.setPageColors(), 50)
   }
 
   setPageColors = () => {
@@ -65,19 +65,19 @@ class Content extends React.Component {
     let pageList = []
     let i = 1
     while (i < totalPages) { pageList.push(i++) }
-    // console.log(totalPages)
     this.setState({ pageList })
+    // console.log(totalPages)
   }
 
   setRandomHeroColor = () => {
     const { colorsAll } = this.props
     const randomIndex = Math.floor(colorsAll.length * Math.random())
-    // console.log({randomIndex})
-    // console.log(colorsAll[randomIndex])
     this.setState({
       heroColor: colorsAll[randomIndex].hex
     })
     this.props.clearColorFilter()
+    // console.log({randomIndex})
+    // console.log(colorsAll[randomIndex])
   }
 
   render() {

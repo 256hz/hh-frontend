@@ -3,6 +3,7 @@ import logo from './images/logo.svg'
 
 export default function Header(props) {
   const [search, setSearch] = useState('')
+  // Search not implemented
   // const submitSearch = value => {
   //   props.search(value)
   // }
