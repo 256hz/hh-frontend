@@ -20,7 +20,8 @@ const ColorFilters = (props) => {
                  textShadow: filter === enabledFilter ? '0px 0px 3px var(--dark-gray)' : null,
                  borderTopRightRadius: 'var(--swatch-border-radius)',
                  borderBottomRightRadius: 'var(--swatch-border-radius)',
-                 
+                 marginLeft: filter === enabledFilter ? 'calc(0px - var(--gutter-width)' : 'inherit',
+                 paddingLeft: filter === enabledFilter ? 'var(--gutter-width)' : null
                }}
           >
             {capitalize(filter)}
