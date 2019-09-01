@@ -7,30 +7,47 @@ class Content extends React.Component {
   constructor(props) {
     super(props)
     this.state={
-      page: 1,
+      page: 0,
       perPage: 12,
-      colorsFiltered: this.props.colorsFiltered,
+      pageList: [],
+      colorsFiltered: [],
       pageColors: null,
       color: null,
     }
   }
 
+  componentDidMount() {
+    this.setState({ colorsFiltered: this.props.colorsFiltered })
+    this.setPageList()
+  }
+
   componentDidUpdate() {
     if (this.props.colorsFiltered !== this.state.colorsFiltered) {
       this.setState({colorsFiltered: this.props.colorsFiltered})
-      setTimeout(_ => this.setPageColors(), 0)
     }
+    setTimeout(_ => this.setPageColors(), 0)
   }
 
   setPageColors = () => {
-    console.log('setPageColors hit')
-    const perPage = this.state.perPage
+    // console.log('setPageColors hit')
+    const { page, perPage, colorsFiltered } = this.state
     this.setState({
-      pageColors: this.state.colorsFiltered.slice(
-        this.state.page * perPage, 
-        this.state.page * perPage + perPage
+      pageColors: colorsFiltered.slice(
+        page * perPage, 
+        page * perPage + perPage
       )
     })
+  }
+
+  setPageList = () => {
+    const { colorsFiltered, perPage } = this.state
+    const totalPages = (colorsFiltered.size / perPage) + 2
+    let pageList = []
+    let i = 1
+    while (i < totalPages) {
+      pageList.push(i++)
+    }
+    this.setState({ pageList })
   }
 
   changePage = (page) => {
@@ -43,10 +60,10 @@ class Content extends React.Component {
         <div className="page">
           <Sidebar filterColors={this.props.filterColors} />
           {this.state.pageColors
-            ? <Viewport 
-                pageColors={this.state.pageColors} 
+            ? <Viewport color={this.state.color}
                 changePage={this.changePage}
                 page={this.state.page}
+                pageColors={this.state.pageColors}
               />
             : <div>Loading...</div>
           }

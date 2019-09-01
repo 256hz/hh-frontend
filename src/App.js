@@ -17,17 +17,14 @@ class App extends React.Component {
       .then( colorsAll => this.setState({ colorsAll, colorsFiltered: colorsAll }) )
   }
 
-  componentDidMount() {
-  }
-
   filterColors = (filter) => {
-    console.log({filter})
-    console.log('old filter:', this.state.filter)
+    // console.log({filter})
+    // console.log('old filter:', this.state.filter)
     filter === this.state.filter
       ? this.setState({ filter: null })
       : this.setState({ filter: filter })
     setTimeout(_ => {
-      console.log('filter triggered:', this.state.filter)
+      // console.log('filter triggered:', this.state.filter)
       this.state.filter
         ? this.setState({colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.filter )})
         : this.setState({colorsFiltered: this.state.colorsAll})  

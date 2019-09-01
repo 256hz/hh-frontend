@@ -8,7 +8,10 @@ const ColorPage = (props) => {
     return (
       <div className="swatches">
         {props.pageColors.map( (color, i) => {
-          return <Swatch color={color.hex} key={i + "_" + color.hex} /> 
+          return <Swatch color={color.hex} 
+                         key={i + "_" + color.hex} 
+                         setHeroColor={props.setHeroColor}
+                 /> 
         })}
         <Pagination page={props.page} changePage={props.changePage} />
       </div>
