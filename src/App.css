@@ -48,6 +48,13 @@
   text-align: center;
 }
 
+.pagination__page__active {
+  background-color: #333;
+  color: #eee;
+  height: 1em;
+  border-radius: 0.5em;
+}
+
 .sidebar {
   flex-shrink: 0;
   max-width: 350px;

@@ -11,19 +11,20 @@ class Content extends React.Component {
       perPage: 12,
       pageList: [],
       colorsFiltered: [],
-      pageColors: null,
+      currentPage: null,
       color: null,
     }
   }
 
   componentDidMount() {
     this.setState({ colorsFiltered: this.props.colorsFiltered })
-    this.setPageList()
+    setTimeout(_ => this.setPageList(), 0)
   }
 
   componentDidUpdate() {
     if (this.props.colorsFiltered !== this.state.colorsFiltered) {
       this.setState({colorsFiltered: this.props.colorsFiltered})
+      setTimeout(_ => this.setPageList(), 0)
     }
     setTimeout(_ => this.setPageColors(), 0)
   }
@@ -32,7 +33,7 @@ class Content extends React.Component {
     // console.log('setPageColors hit')
     const { page, perPage, colorsFiltered } = this.state
     this.setState({
-      pageColors: colorsFiltered.slice(
+      currentPage: colorsFiltered.slice(
         page * perPage, 
         page * perPage + perPage
       )
@@ -41,12 +42,11 @@ class Content extends React.Component {
 
   setPageList = () => {
     const { colorsFiltered, perPage } = this.state
-    const totalPages = (colorsFiltered.size / perPage) + 2
+    const totalPages = (colorsFiltered.length / perPage) + 2
     let pageList = []
     let i = 1
-    while (i < totalPages) {
-      pageList.push(i++)
-    }
+    while (i < totalPages) { pageList.push(i++) }
+    console.log(totalPages)
     this.setState({ pageList })
   }
 
@@ -59,11 +59,12 @@ class Content extends React.Component {
       return (
         <div className="page">
           <Sidebar filterColors={this.props.filterColors} />
-          {this.state.pageColors
+          {this.state.currentPage
             ? <Viewport color={this.state.color}
                 changePage={this.changePage}
                 page={this.state.page}
-                pageColors={this.state.pageColors}
+                pageList={this.state.pageList}
+                currentPage={this.state.currentPage}
               />
             : <div>Loading...</div>
           }

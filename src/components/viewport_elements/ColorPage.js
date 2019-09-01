@@ -4,16 +4,19 @@ import Pagination from './Pagination'
 import '../../App.css';
 
 const ColorPage = (props) => {
-  if (props.pageColors) {
+  if (props.currentPage) {
     return (
       <div className="swatches">
-        {props.pageColors.map( (color, i) => {
+        {props.currentPage.map( (color, i) => {
           return <Swatch color={color.hex} 
                          key={i + "_" + color.hex} 
                          setHeroColor={props.setHeroColor}
                  /> 
         })}
-        <Pagination page={props.page} changePage={props.changePage} />
+        <Pagination page={props.page} 
+                    changePage={props.changePage} 
+                    pageList={props.pageList}
+        />
       </div>
     )
   } else {
