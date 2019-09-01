@@ -135,6 +135,8 @@
 
 .swatches__swatch-title {
   height: 20%;
+  padding-top: 8%;
+  padding-left: 8%;
 }
 
 .swatches__swatch__hero {

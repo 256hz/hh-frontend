@@ -22,7 +22,7 @@ class Content extends React.Component {
       setTimeout(_ => {
         this.setPageColors()
         this.setPageList()
-      }, 0)
+      }, 5)
     }
   }
 
@@ -33,7 +33,7 @@ class Content extends React.Component {
         this.setPageList()
         this.setPageColors()
         this.setState({ page: 0 })
-      }, 0)
+      }, 5)
     }
   }
   
@@ -45,7 +45,7 @@ class Content extends React.Component {
   
   setPage = (page) => {
     this.setState({ page })
-    setTimeout(_ => this.setPageColors(), 0)
+    setTimeout(_ => this.setPageColors(), 5)
   }
 
   setPageColors = () => {

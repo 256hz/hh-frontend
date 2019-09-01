@@ -3,6 +3,7 @@ export const filters = [
     'orange',
     'yellow',
     'green',
+    'cyan',
     'blue',
     'purple',
     'brown',
