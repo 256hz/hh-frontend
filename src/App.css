@@ -55,6 +55,7 @@
   height: 100%;
   line-height: 2em;
   justify-content: center;
+  margin-top: var(--gutter-width);
   text-align: center;
   vertical-align: baseline;
   width: 100%;
