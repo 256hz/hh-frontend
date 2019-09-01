@@ -4,10 +4,10 @@ import '../../App.css'
 export default function Pagination(props) {
   const { page, pageList } = props
   const totalPages = pageList.length
-  const pageHome = () => { props.changePage(0) }
-  const pageBack = () => { page > 0 && props.changePage(page - 1) }
-  const pageNext = () => { page < totalPages - 1 && props.changePage(page + 1) }
-  const pageEnd = () => { props.changePage(totalPages - 1) }
+  const pageHome = () => { props.setPage(0) }
+  const pageBack = () => { page > 0 && props.setPage(page - 1) }
+  const pageNext = () => { page < totalPages - 1 && props.setPage(page + 1) }
+  const pageEnd = () => { props.setPage(totalPages - 1) }
   
   return(
     <div className="pagination">
@@ -20,7 +20,7 @@ export default function Pagination(props) {
       </div>
       {pageList.map( pageNo => {
         return <div className={pageNo === page + 1 ? "pagination__page-no__active" : "pagination__page-no"}
-                    onClick={_ => props.changePage(pageNo - 1)}
+                    onClick={_ => props.setPage(pageNo - 1)}
                     key={'page_' + pageNo}
                >
                 {pageNo}

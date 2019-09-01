@@ -6,9 +6,10 @@ import '../App.css';
 const Sidebar = (props) => {
   return (
     <div className="sidebar">
-      <RandomButton />
-      <ColorFilters filterColorsMethod={props.filterColorsMethod} 
-        enabledFilter={props.enabledFilter} 
+      <RandomButton setRandomHeroColor={props.setRandomHeroColor}/>
+      <ColorFilters setColorFilter={props.setColorFilter} 
+        enabledFilter={props.enabledFilter}
+        setHeroColor={props.setHeroColor}
       />
     </div>
   );

@@ -15,7 +15,7 @@ const ColorPage = (props) => {
                  /> 
         })}
         <Pagination page={props.page} 
-                    changePage={props.changePage} 
+                    setPage={props.setPage} 
                     pageList={props.pageList}
         />
       </div>

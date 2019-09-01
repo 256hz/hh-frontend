@@ -8,6 +8,7 @@ class App extends React.Component {
     super()
     this.state={
       apiUrl: 'http://localhost:3000/',
+      heroColor: null,
       colorsAll: [],
       enabledFilter: null,
       colorsFiltered: null
@@ -17,7 +18,7 @@ class App extends React.Component {
       .then( colorsAll => this.setState({ colorsAll, colorsFiltered: colorsAll }) )
   }
 
-  filterColorsMethod = (filter) => {
+  setColorFilter = (filter) => {
     // console.log({filter})
     // console.log('old filter:', this.state.enabledFilter)
     filter === this.state.enabledFilter
@@ -29,8 +30,15 @@ class App extends React.Component {
         ? this.setState({
             colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.enabledFilter )
           })
-        : this.setState({colorsFiltered: this.state.colorsAll})  
+        : this.setState({ colorsFiltered: this.state.colorsAll })  
     }, 0)
+  }
+
+  clearColorFilter = () => {
+    this.setState({ 
+      enabledFilter: null,
+      colorsFiltered: this.state.colorsAll
+    })
   }
 
   render() {
@@ -38,9 +46,11 @@ class App extends React.Component {
       return(
         <div className="App">
           <Header />
-          <Content colorsFiltered={this.state.colorsFiltered} 
-            filterColorsMethod={this.filterColorsMethod}
+          <Content colorsAll={this.state.colorsAll}
+            colorsFiltered={this.state.colorsFiltered} 
+            clearColorFilter={this.clearColorFilter}
             enabledFilter={this.state.enabledFilter}
+            setColorFilter={this.setColorFilter}
           />
         </div>
       )

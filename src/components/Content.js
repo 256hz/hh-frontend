@@ -12,7 +12,7 @@ class Content extends React.Component {
       pageList: [],
       colorsFiltered: [],
       currentPage: null,
-      color: null,
+      heroColor: null,
     }
   }
 
@@ -36,16 +36,16 @@ class Content extends React.Component {
       }, 0)
     }
   }
-
-  changePage = (page) => {
+  
+  setHeroColor = (heroColor) => {
+    heroColor !== this.state.heroColor
+    ? this.setState({ heroColor })
+    : this.setState({ heroColor: null })
+  }
+  
+  setPage = (page) => {
     this.setState({ page })
     setTimeout(_ => this.setPageColors(), 0)
-  }
-
-  setHeroColor = (color) => {
-    color != this.state.color
-      ? this.setState({ color })
-      : this.setState({ color: null })
   }
 
   setPageColors = () => {
@@ -69,14 +69,29 @@ class Content extends React.Component {
     this.setState({ pageList })
   }
 
+  setRandomHeroColor = () => {
+    const { colorsAll } = this.props
+    const randomIndex = Math.floor(colorsAll.length * Math.random())
+    // console.log({randomIndex})
+    // console.log(colorsAll[randomIndex])
+    this.setState({
+      heroColor: colorsAll[randomIndex].hex
+    })
+    this.props.clearColorFilter()
+  }
+
   render() {
     if (this.props.colorsFiltered) {
       return (
-        <div className="page">
-          <Sidebar filterColorsMethod={this.props.filterColorsMethod} />
+        <div className="content">
+          <Sidebar enabledFilter={this.props.enabledFilter}
+            setColorFilter={this.props.setColorFilter}
+            setHeroColor={this.setHeroColor}
+            setRandomHeroColor={this.setRandomHeroColor}
+          />
           {this.state.currentPage
-            ? <Viewport color={this.state.color}
-                changePage={this.changePage}
+            ? <Viewport heroColor={this.state.heroColor}
+                setPage={this.setPage}
                 currentPage={this.state.currentPage}
                 page={this.state.page}
                 pageList={this.state.pageList}

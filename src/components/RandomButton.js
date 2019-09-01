@@ -1,10 +1,14 @@
 import React from 'react';
 import '../App.css';
 
-const RandomButton = () => {
+const RandomButton = (props) => {
   return (
     <div>
-      <button className="sidebar__button-random">Random Color</button>
+      <button className="sidebar__button-random"
+              onClick={_ => props.setRandomHeroColor()}
+      >
+        Random Color
+      </button>
     </div>
   )
 }
