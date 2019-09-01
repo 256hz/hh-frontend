@@ -37,8 +37,19 @@ class Content extends React.Component {
     }
   }
 
+  changePage = (page) => {
+    this.setState({ page })
+    setTimeout(_ => this.setPageColors(), 0)
+  }
+
+  setHeroColor = (color) => {
+    color != this.state.color
+      ? this.setState({ color })
+      : this.setState({ color: null })
+  }
+
   setPageColors = () => {
-    console.log('setPageColors hit')
+    // console.log('setPageColors hit')
     const { page, perPage, colorsFiltered } = this.state
     this.setState({
       currentPage: colorsFiltered.slice(
@@ -54,13 +65,8 @@ class Content extends React.Component {
     let pageList = []
     let i = 1
     while (i < totalPages) { pageList.push(i++) }
-    console.log(totalPages)
+    // console.log(totalPages)
     this.setState({ pageList })
-  }
-
-  changePage = (page) => {
-    this.setState({ page })
-    setTimeout(_ => this.setPageColors(), 0)
   }
 
   render() {
@@ -74,6 +80,7 @@ class Content extends React.Component {
                 currentPage={this.state.currentPage}
                 page={this.state.page}
                 pageList={this.state.pageList}
+                setHeroColor={this.setHeroColor}
               />
             : <div>Loading...</div>
           }

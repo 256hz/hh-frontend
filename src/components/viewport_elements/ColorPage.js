@@ -10,6 +10,7 @@ const ColorPage = (props) => {
         {props.currentPage.map( (color, i) => {
           return <Swatch color={color.hex} 
                          key={i + "_" + color.hex} 
+                         hero={false}
                          setHeroColor={props.setHeroColor}
                  /> 
         })}

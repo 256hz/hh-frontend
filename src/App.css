@@ -138,7 +138,11 @@
 }
 
 .swatches__swatch__hero {
-  width: calc(100vw - var(--gutter-width));
+  width: calc(100% - var(--gutter-width) * 2);
+  max-width: calc(100% - var(--gutter-width) * 2);
+  height: calc(100vh - var(--gutter-width) * 2);
+  min-height: calc(100% - var(--gutter-width) * 2);
+  font-size: 2.5em;
 }
 
 .triangle-right {
@@ -147,7 +151,7 @@
 	height: 0;
 	border-style: solid;
 	border-width: 5px 0 5px 7.5px;
-	border-color: transparent transparent transparent var(--dark-gray); 
+	border-color: transparent transparent transparent lightslategrey; 
 }
 
 .triangle-left {
@@ -156,7 +160,7 @@
 	height: 0;
 	border-style: solid;
 	border-width: 5px 7.5px 5px 0;
-	border-color: transparent var(--dark-gray) transparent transparent;
+	border-color: transparent lightslategrey transparent transparent;
 }
 
 .viewport {

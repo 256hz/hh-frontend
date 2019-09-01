@@ -10,11 +10,13 @@ const Viewport = (props) => {
           {props.color 
             ? <HeroColor color={props.color} 
                          backToList={props.backToList} 
+                         setHeroColor={props.setHeroColor}
               />
             : <ColorPage currentPage={props.currentPage} 
                          changePage={props.changePage} 
                          page={props.page}
                          pageList={props.pageList}
+                         setHeroColor={props.setHeroColor}
               />
           }
         </div>

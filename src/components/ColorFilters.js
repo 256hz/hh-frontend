@@ -11,7 +11,10 @@ const ColorFilters = (props) => {
         return(
           <div onClick={_ => filterColorsMethod(filter)}
                key={filter}
-               style={{color: filter === enabledFilter ? filter : '#333'}}
+               style={{
+                color: filter === enabledFilter ? 'white' : '#333',
+                backgroundColor: filter === enabledFilter && filter 
+               }}
           >
             {capitalize(filter)}
           </div>

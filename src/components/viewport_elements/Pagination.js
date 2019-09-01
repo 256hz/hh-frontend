@@ -20,8 +20,8 @@ export default function Pagination(props) {
       </div>
       {pageList.map( pageNo => {
         return <div className={pageNo === page + 1 ? "pagination__page-no__active" : "pagination__page-no"}
-                     onClick={_ => props.changePage(pageNo - 1)}
-                     key={'page_' + pageNo}
+                    onClick={_ => props.changePage(pageNo - 1)}
+                    key={'page_' + pageNo}
                >
                 {pageNo}
               </div>

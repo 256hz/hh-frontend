@@ -18,13 +18,13 @@ class App extends React.Component {
   }
 
   filterColorsMethod = (filter) => {
-    console.log({filter})
-    console.log('old filter:', this.state.enabledFilter)
+    // console.log({filter})
+    // console.log('old filter:', this.state.enabledFilter)
     filter === this.state.enabledFilter
       ? this.setState({ enabledFilter: null })
       : this.setState({ enabledFilter: filter })
     setTimeout(_ => {
-      console.log('filter triggered:', this.state.enabledFilter)
+      // console.log('filter triggered:', this.state.enabledFilter)
       this.state.enabledFilter
         ? this.setState({
             colorsFiltered: this.state.colorsAll.filter( color => color.family === this.state.enabledFilter )
