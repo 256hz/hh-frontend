@@ -24,7 +24,10 @@ class Content extends React.Component {
   componentDidUpdate() {
     if (this.props.colorsFiltered !== this.state.colorsFiltered) {
       this.setState({colorsFiltered: this.props.colorsFiltered})
-      setTimeout(_ => this.setPageList(), 0)
+      setTimeout(_ => {
+        this.setPageList()
+        this.setState({ page: 0 })
+      }, 0)
     }
     setTimeout(_ => this.setPageColors(), 0)
   }
@@ -42,7 +45,7 @@ class Content extends React.Component {
 
   setPageList = () => {
     const { colorsFiltered, perPage } = this.state
-    const totalPages = (colorsFiltered.length / perPage) + 2
+    const totalPages = colorsFiltered.length / perPage
     let pageList = []
     let i = 1
     while (i < totalPages) { pageList.push(i++) }
