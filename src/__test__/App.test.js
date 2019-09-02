@@ -27,6 +27,7 @@ test('integration tests: random, red filter, deselect filter', async () => {
   })
   const page = await browser.newPage()
   await page.goto(constants.siteTestUrl)
+  await page.waitForSelector('div#filter_red')  
 
   // expect.assertions(3)
 
