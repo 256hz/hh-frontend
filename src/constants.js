@@ -1,5 +1,6 @@
 const axios = require('axios')
 
+// Holds the api URLs, list of filters, and a function for testing the API response.
 const constants = {
   apiUrl: 'https://abes-helpful-demo.herokuapp.com/',
   apiTestUrl: 'http://localhost:3000',

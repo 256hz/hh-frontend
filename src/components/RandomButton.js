@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 
+// Displays the random button in the sidebar.
 const RandomButton = (props) => {
   return (
     <div>

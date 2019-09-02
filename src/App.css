@@ -1,3 +1,7 @@
+/* All styles are in the BEM convention and in alphabetical order.
+   Variables are at the top.  All border radii are pegged to the 
+   --swatch-border-radius variable. */
+
 :root {
   --animation-time: 0.175s;
   --dark-gray: #333;
@@ -203,7 +207,7 @@
 }
 
 .swatches__swatch--hero {
-  font-size: 2em;
+  font-size: 1.35em;
   height: calc(100vh - var(--gutter-width) * 2);
   min-height: calc(100% - var(--gutter-width) * 2);
   max-width: calc(100% - var(--gutter-width) * 2);

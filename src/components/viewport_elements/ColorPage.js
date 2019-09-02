@@ -3,6 +3,7 @@ import Swatch from './Swatch'
 import Pagination from './Pagination'
 import '../../App.css';
 
+// Holds a page of Swatches and the Pagination element.  Agnostic to number of Swatches.
 const ColorPage = (props) => {
   if (props.currentPage) {
     return (

@@ -3,6 +3,9 @@ import { capitalize } from 'lodash';
 import { filters } from '../constants';
 import '../App.css';
 
+// Populates the list of color filters in the sidebar.  If one is selected, changes that
+// filter's background to its color, and font to white with a black textShadow 
+// (improved visibility for Yellow in particular).  Uses Lodash's capitalize method.
 const ColorFilters = (props) => {
   const { enabledFilter, setColorFilter, setHeroColor } = props
   return (

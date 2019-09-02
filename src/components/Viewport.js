@@ -3,6 +3,8 @@ import HeroColor from './viewport_elements/HeroColor'
 import ColorPage from './viewport_elements/ColorPage'
 import '../App.css';
 
+// Child of Content.  Checks for a heroColor in props and renders that or a page
+// of colors if it's not present.
 const Viewport = (props) => {
   return (props.currentPage)
     ? (

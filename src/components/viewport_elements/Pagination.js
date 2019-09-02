@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../App.css'
 
+// Takes the list of pages from props and populates the pagination area with them.  Also
+// creates home, back, next, and end arrows.
 export default function Pagination(props) {
   const { page, pageList } = props
   const totalPages = pageList.length

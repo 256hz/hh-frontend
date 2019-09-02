@@ -3,6 +3,9 @@ import RandomButton from './RandomButton';
 import ColorFilters from './ColorFilters';
 import '../App.css';
 
+// Child of Content.  Returns the random button and list of color filters.
+// setHeroColor is passed to each filter so that they can set it to null when
+// a filter is activated.
 const Sidebar = (props) => {
   return (
     <div className="sidebar">
