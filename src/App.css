@@ -1,4 +1,5 @@
 :root {
+  --animation-time: 0.175s;
   --dark-gray: #333;
   --gutter-width: 25px;
   --pagination-width: 22.5px;
@@ -122,11 +123,12 @@
   height: 40px;
   margin: 0px auto 50px;
   width: 100%;
+  transition-property: box-shadow;
+  transition-duration: var(--animation-time);
 }
 
 .sidebar__button-random:hover {
   cursor: pointer;
-  /* border: 1px solid dimgray; */
   box-shadow: 0px 0px 7px white;
 }
 
@@ -135,6 +137,8 @@
   border-top-right-radius: var(--swatch-border-radius);
   margin-left: calc(var(--gutter-width) * -1);
   padding-left: var(--gutter-width);
+  transition-duration: var(--animation-time);
+  transition-property: background-color;
 }
 
 .sidebar__color-filter:hover {
@@ -170,10 +174,13 @@
   margin-top: var(--gutter-width);
   max-width: 250px;
   min-width: 150px;
+  transition-property: filter;
+  transition-duration: var(--animation-time);
 }
 
 .swatches__swatch:hover {
   cursor: pointer;
+  filter: drop-shadow(0px 0px 5px dimgray);
 }
 
 .swatches__swatch-color {
