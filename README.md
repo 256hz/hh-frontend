@@ -33,4 +33,16 @@ In src/App.js, the state 'apiUrl' points to the [rails API](https://abes-helpful
         - Pagination
 
 ### TESTING
-Some preliminary unit and integration tests have been added.  These can be run with ```yarn test``` or ```npm run test```.  Tests are run on the local servers, so host the Rails server on port 3000 and the npm server on 3001.  
+Some preliminary unit and integration tests have been added.  These can be run with ```yarn test``` or ```npm run test```.  Tests are run on the local servers, so host the Rails server on port 3000 and the npm server on 3001.
+
+Tests are:
+- App.test.js
+  - Does the API return something not falsy?
+  - Does the first record the API returns have all the proper keys?
+  - Navigate to the page and click Random.  Does a hero swatch show?
+  - Click the Red filter.  Are all the swatches in the red family?
+  - Click the Red filter again.  Are the number of red swatches less than 12?
+- constants.test.js
+  - is the filter list an object?
+  - is the filter list not a string?
+  - is the filter list correct?
