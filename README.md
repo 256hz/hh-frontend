@@ -16,7 +16,7 @@ In src/App.js, the state 'apiUrl' points to the [rails API](https://abes-helpful
 - Navigate pages below using numbers or arrows.
 - Click on the Random button to get a hero view of a random color.
 - Filter colors using sidebar menu.  Deactivate filter by clicking on the same filter again, or on the logo in the top left.
-- Site is vagely responsive, although the hero color looks pretty silly.
+- Site is minimally responsive, although the hero color looks pretty silly on mobile.  If I was to make a really responsive design, the Sidebar would take up the full screen width, and the page of colors would stack underneath it.
 
 ### STRUCTURE
 - App (colors and filtering live here)
