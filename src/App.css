@@ -208,7 +208,8 @@
 
 .swatches__swatch--hero {
   font-size: 1.35em;
-  height: calc(100vh - var(--gutter-width) * 2);
+  height: calc(100vh - var(--gutter-width) * 8);
+  margin-bottom: calc(var(--gutter-width) * 2);
   min-height: calc(100% - var(--gutter-width) * 2);
   max-width: calc(100% - var(--gutter-width) * 2);
   width: calc(100% - var(--gutter-width) * 2);

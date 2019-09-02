@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state={
-      apiUrl,
+      apiUrl: apiUrl,
       colorsAll: [],
       enabledFilter: null,
       colorsFiltered: null
