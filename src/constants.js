@@ -1,6 +1,10 @@
 const axios = require('axios')
 
 const constants = {
+  // apiUrl: 'https://abes-helpful-demo.herokuapp.com/',
+  apiUrl: 'http://localhost:3000',
+  // siteUrl: 'https://abes-helpful-demo.netlify.com/',
+  siteUrl: 'http://localhost:3001',
   filters: [
     'red',
     'orange',
@@ -13,11 +17,11 @@ const constants = {
     'gray'
   ],
   functions: {
-    add: (num1, num2) => num1 + num2,
-    isNull: () => null,
-    isFalsy: () => undefined,
+    // add: (num1, num2) => num1 + num2,
+    // isNull: () => null,
+    // isFalsy: () => undefined,
     fetchColors: () => axios
-                        .get('https://abes-helpful-demo.netlify.com/')
+                        .get(constants.apiUrl)
                         .catch( console.log )
     
   }

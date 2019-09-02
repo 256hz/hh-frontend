@@ -103,7 +103,7 @@ class Content extends React.Component {
         </div>
       )
     } else {
-      return null
+      return <div>Loading...</div>
     }
   }
 }

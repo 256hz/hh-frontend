@@ -9,15 +9,17 @@ export default function Header(props) {
   // }
   return(
     <div className="header">
-      <img src={logo} 
-           className="header__logo" 
-           alt="Helpful Human logo"
-      />
+      <div className="header__logo" 
+           onClick={_ => props.clearColorFilter()} 
+      >
+        <img src={logo} 
+            alt="Helpful Human logo"
+        />
+      </div>
       <input value={search}
              className="header__search"
              placeholder="  Search"
              onChange={ev => setSearch(ev.target.value)}
-             // onSubmit={ev => submitSearch(ev.target.value)}
       />
     </div>
   )

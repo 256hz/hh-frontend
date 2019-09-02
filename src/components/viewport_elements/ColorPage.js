@@ -22,7 +22,7 @@ const ColorPage = (props) => {
       </div>
     )
   } else {
-    return null
+    return <div>Loading...</div>
   }
 }
 

@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
 import Content from './components/Content';  
+import { apiUrl } from './constants'
 import './App.css';
 
 class App extends React.Component {
   constructor() {
     super()
     this.state={
-      apiUrl: 'https://abes-helpful-demo.herokuapp.com/',
+      apiUrl,
       colorsAll: [],
       enabledFilter: null,
       colorsFiltered: null
@@ -44,7 +45,7 @@ class App extends React.Component {
     if (this.state.colorsFiltered) {
       return(
         <div className="App">
-          <Header />
+          <Header clearColorFilter={this.clearColorFilter} />
           <Content colorsAll={this.state.colorsAll}
             colorsFiltered={this.state.colorsFiltered} 
             clearColorFilter={this.clearColorFilter}
@@ -54,7 +55,7 @@ class App extends React.Component {
         </div>
       )
     } else {
-      return null
+      return <div>Loading...</div>
     }
   }
 }
