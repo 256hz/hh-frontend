@@ -4,7 +4,7 @@ import '../../App.css';
 const Swatch = (props) => {
   // console.log("backgroundColor:", props.color)
   return (
-    <div className={props.hero ? "swatches__swatch swatches__swatch__hero" : "swatches__swatch"}
+    <div className={props.hero ? "swatches__swatch swatches__swatch--hero" : "swatches__swatch"}
          onClick={_ => props.setHeroColor(props.color)}
          family={props.family}
     >

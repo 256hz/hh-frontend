@@ -32,7 +32,7 @@ test('integration tests: random, red filter, deselect filter', async () => {
 
   await page.click('button#random')
   const random_swatch = await page.$eval('.swatches__swatch', el => el.outerHTML)
-  expect(random_swatch).toContain('swatches__swatch__hero')
+  expect(random_swatch).toContain('swatches__swatch--hero')
 
   await page.click('div#filter_red')
   let swatches = await page.$$eval('.swatches__swatch', el => el.map( sw => sw.outerHTML))

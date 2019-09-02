@@ -98,7 +98,7 @@
   cursor: pointer;
 }
 
-.pagination__page-no__active {
+.pagination__page-no--active {
   font-size: 1.5em;
   text-decoration: underline;
   width: calc(var(--pagination-width) + 10px);
@@ -190,7 +190,7 @@
   padding-left: 8%;
 }
 
-.swatches__swatch__hero {
+.swatches__swatch--hero {
   font-size: 2em;
   height: calc(100vh - var(--gutter-width) * 2);
   min-height: calc(100% - var(--gutter-width) * 2);
