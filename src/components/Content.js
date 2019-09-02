@@ -97,7 +97,7 @@ class Content extends React.Component {
                 pageList={this.state.pageList}
                 setHeroColor={this.setHeroColor}
               />
-            : null
+            : <div>Loading...</div>
           }
           
         </div>
