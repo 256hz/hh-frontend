@@ -6,6 +6,7 @@ const RandomButton = (props) => {
     <div>
       <button className="sidebar__button-random"
               onClick={_ => props.setRandomHeroColor()}
+              id="random"
       >
         Random Color
       </button>

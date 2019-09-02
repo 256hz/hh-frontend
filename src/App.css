@@ -106,7 +106,7 @@
 .swatches {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-left: calc(0px - var(--gutter-width));
   margin-top: calc(0px - var(--gutter-width));
 }
@@ -121,7 +121,7 @@
   height: 225px;
   margin-left: var(--gutter-width);
   margin-top: var(--gutter-width);
-  max-width: 200px;
+  max-width: 250px;
   min-width: 150px;
 }
 
