@@ -97,13 +97,13 @@ class Content extends React.Component {
                 pageList={this.state.pageList}
                 setHeroColor={this.setHeroColor}
               />
-            : <div>Loading...</div>
+            : null
           }
           
         </div>
       )
     } else {
-      return <div>Loading...</div>
+      return null
     }
   }
 }

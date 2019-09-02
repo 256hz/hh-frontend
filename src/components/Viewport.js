@@ -21,7 +21,7 @@ const Viewport = (props) => {
           }
         </div>
       )
-    : <div>Loading...</div>
+    : null
 }
 
 export default Viewport

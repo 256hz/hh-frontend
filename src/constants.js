@@ -17,7 +17,7 @@ const constants = {
     isNull: () => null,
     isFalsy: () => undefined,
     fetchColors: () => axios
-                        .get('http://localhost:3000')
+                        .get('https://abes-helpful-demo.netlify.com/')
                         .catch( console.log )
     
   }
