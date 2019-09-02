@@ -23,7 +23,7 @@ const constants = {
     // isNull: () => null,
     // isFalsy: () => undefined,
     fetchColors: () => axios
-                        .get(constants.apiTestUrl)
+                        .get(constants.apiUrl)
                         .catch( console.log )
     
   }

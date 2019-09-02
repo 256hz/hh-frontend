@@ -34,7 +34,7 @@ In src/App.js, the state 'apiUrl' points to the [rails API](https://abes-helpful
         - Pagination
 
 ### TESTING
-Some preliminary unit and integration tests have been added with Jest and Puppeteer.  These can be run with ```yarn test``` or ```npm run test```.  Tests are run on the local servers, so host the Rails server on port 3000 and the npm server on 3001.
+Some preliminary unit and integration tests have been added with Jest and Puppeteer.  These can be run with ```yarn test``` or ```npm run test```.  Tests are run on the remote servers.  To test the local servers, host the Rails server on port 3000 and the npm server on 3001, and change `apiUrl` and `siteUrl` in the test.js files to `apiTestUrl` and `siteTestUrl`, respectively.
 
 Tests are:
 - App.test.js

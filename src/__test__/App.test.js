@@ -26,7 +26,7 @@ test('integration tests: random, red filter, deselect filter', async () => {
     slowMo: 50,
   })
   const page = await browser.newPage()
-  await page.goto(constants.siteTestUrl)
+  await page.goto(constants.siteUrl)
   await page.waitForSelector('div#filter_red')  
 
   expect.assertions(3)
