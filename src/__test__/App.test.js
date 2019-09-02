@@ -4,14 +4,14 @@ const constants = require('../constants')
 beforeEach( () => {setTimeout(()=>{}, 5000)}, 5000)
 
 test('API should return something', async () => {
-  // expect.assertions(1)
-  const data = constants.functions.fetchColors()
+  expect.assertions(1)
+  const data = await constants.functions.fetchColors()
   expect(data).not.toBeFalsy()
 })
 
 test('first response from API should include id, hex, created, updated, family, & relative_color', async () => {
   const data = await constants.functions.fetchColors()
-  // expect.assertions(6)
+  expect.assertions(6)
   expect(data.data[0].id).not.toBeFalsy()
   expect(data.data[0].hex).not.toBeFalsy()
   expect(data.data[0].created_at).not.toBeFalsy()
@@ -29,7 +29,7 @@ test('integration tests: random, red filter, deselect filter', async () => {
   await page.goto(constants.siteTestUrl)
   await page.waitForSelector('div#filter_red')  
 
-  // expect.assertions(3)
+  expect.assertions(3)
 
   await page.click('button#random')
   const random_swatch = await page.$eval('.swatches__swatch', el => el.outerHTML)
