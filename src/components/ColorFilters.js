@@ -14,6 +14,7 @@ const ColorFilters = (props) => {
                   setHeroColor(null)
                }}
                key={filter}
+               id={'filter_' + filter}
                style={{
                  color: filter === enabledFilter ? 'white' : '#333',
                  backgroundColor: filter === enabledFilter ? filter : null,

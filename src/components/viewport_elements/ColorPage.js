@@ -8,7 +8,8 @@ const ColorPage = (props) => {
     return (
       <div className="swatches">
         {props.currentPage.map( (color, i) => {
-          return <Swatch color={color.hex} 
+          return <Swatch color={color.hex}
+                         family={color.family}
                          key={i + "_" + color.hex} 
                          hero={false}
                          setHeroColor={props.setHeroColor}
