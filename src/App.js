@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state={
-      apiUrl: 'http://localhost:3000/',
+      apiUrl: 'https://abes-helpful-demo.herokuapp.com/',
       colorsAll: [],
       enabledFilter: null,
       colorsFiltered: null
