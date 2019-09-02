@@ -1,68 +1,36 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8663d87b-0587-427c-90f9-6213a6d78f70/deploy-status)](https://app.netlify.com/sites/abes-helpful-demo/deploys)
 
-## Available Scripts
+### [Live link](http://abes-helpful-demo.netlify.com)
 
-In the project directory, you can run:
+Code challenge accepted.
 
-### `npm start`
+### INSTALLATION
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```yarn #``` or ```npm i```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+In src/App.js, the state 'apiUrl' points to the [rails API](https://abes-helpful-demo.herokuapp.com) from [this repo](https://github.com/256hz/hh-backend).  App fetches from the API on the initial page load.
 
-### `npm test`
+### FUNCTIONS
+- Click on a swatch to see an enlarged (hero) view.
+- Click on a hero swatch to go back to the page you were on.
+- Navigate pages below using numbers or arrows.
+- Click on the Random button to get a hero view of a random color.
+- Filter colors using sidebar menu.  Deactivate filter by clicking on the same filter again, or on the logo in the top left.
+- Site is vagely responsive, although the hero color looks pretty silly.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### STRUCTURE
+- App (colors and filtering live here)
+  - Header
+  - Content (most state and methods live here)
+    - Sidebar
+      - RandomButton
+      - ColorFilters
+    - Viewport
+      - HeroColor
+        - Swatch
+      - ColorPage
+        - Swatch
+        - Pagination
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### TESTING
+Some preliminary unit and integration tests have been added.  These can be run with ```yarn test``` or ```npm run test```.  Tests are run on the local servers, so host the Rails server on port 3000 and the npm server on 3001.  
