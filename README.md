@@ -2,7 +2,7 @@
 
 ### [Live link](http://abes-helpful-demo.netlify.com)
 
-Code challenge accepted.
+This was written with React 16.9 in ES6 JS.  CSS was styled by hand using flexbox.
 
 ### INSTALLATION
 
@@ -16,7 +16,8 @@ In src/App.js, the state 'apiUrl' points to the [rails API](https://abes-helpful
 - Navigate pages below using numbers or arrows.
 - Click on the Random button to get a hero view of a random color.
 - Filter colors using sidebar menu.  Deactivate filter by clicking on the same filter again, or on the logo in the top left.
-- Site is vagely responsive, although the hero color looks pretty silly.
+- Site is vagely responsive, although the hero color looks pretty silly on mobile.
+- You can type in the search bar, but it won't do anything.
 
 ### STRUCTURE
 - App (colors and filtering live here)
