@@ -12,12 +12,14 @@ export default function Pagination(props) {
   return(
     <div className="pagination">
       <div onClick={_ => pageHome()} className="pagination__arrow" id="pageHome">
-        <div className="triangle-left"></div>
-        <div className="triangle-left"></div>
+        <div className="pagination-arrow__triangle pagination-arrow__triangle-left"></div>
+        <div className="pagination-arrow__triangle pagination-arrow__triangle-left"></div>
       </div>
+      &nbsp;&nbsp;
       <div className="pagination__arrow" id="pageBack">
-        <div className="triangle-left" onClick={_ => pageBack()}></div>
+        <div className="pagination-arrow__triangle pagination-arrow__triangle-left" onClick={_ => pageBack()}></div>
       </div>
+      &nbsp;&nbsp;
       {pageList.map( pageNo => {
         return <div className={pageNo === page + 1 ? "pagination__page-no__active" : "pagination__page-no"}
                     onClick={_ => props.setPage(pageNo - 1)}
@@ -28,12 +30,12 @@ export default function Pagination(props) {
       })}
       &nbsp;&nbsp;
       <div className="pagination__arrow" id="pageNext">
-        <div className="triangle-right" onClick={_ => pageNext()}></div>
+        <div className="pagination-arrow__triangle pagination-arrow__triangle-right" onClick={_ => pageNext()}></div>
       </div>
       &nbsp;&nbsp;
       <div onClick={_ => pageEnd()} className="pagination__arrow" id="pageEnd">
-        <div className="triangle-right"></div>
-        <div className="triangle-right"></div>
+        <div className="pagination-arrow__triangle pagination-arrow__triangle-right"></div>
+        <div className="pagination-arrow__triangle pagination-arrow__triangle-right"></div>
       </div>
     </div>
   )

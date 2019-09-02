@@ -13,16 +13,13 @@ const ColorFilters = (props) => {
                   setColorFilter(filter)
                   setHeroColor(null)
                }}
+               className='sidebar__color-filter'
                key={filter}
                id={'filter_' + filter}
                style={{
-                 color: filter === enabledFilter ? 'white' : '#333',
                  backgroundColor: filter === enabledFilter ? filter : null,
+                 color: filter === enabledFilter ? 'white' : '#333',
                  textShadow: filter === enabledFilter ? '0px 0px 3px var(--dark-gray)' : null,
-                 borderTopRightRadius: 'var(--swatch-border-radius)',
-                 borderBottomRightRadius: 'var(--swatch-border-radius)',
-                 marginLeft: filter === enabledFilter ? 'calc(0px - var(--gutter-width)' : 'inherit',
-                 paddingLeft: filter === enabledFilter ? 'var(--gutter-width)' : null
                }}
           >
             {capitalize(filter)}
