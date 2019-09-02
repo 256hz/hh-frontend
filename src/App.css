@@ -1,6 +1,7 @@
 :root {
   --animation-time: 0.175s;
   --dark-gray: #333;
+  --main-font: 'Source Serif Pro', serif;
   --gutter-width: 25px;
   --pagination-width: 22.5px;
   --sidebar-width: 150px;
@@ -55,7 +56,7 @@
   color: var(--dark-gray);
   display: flex;
   flex-flow: row wrap;
-  font-family: 'Source Serif Pro', serif;
+  font-family: var(--main-font);
   font-size: 1em;
   height: 100%;
   line-height: 2em;
@@ -108,7 +109,7 @@
 .sidebar {
   background-color: rgb(214, 214, 216);
   border: 1px solid rgb(173, 173, 173);
-  font-family: 'Source Serif Pro', serif;
+  font-family: var(--main-font);
   flex-shrink: 0;
   max-width: 350px;
   min-width: 150px;
@@ -192,8 +193,12 @@
 }
 
 .swatches__swatch-title {
+  align-items: center;
+  display: flex;
+  font-family: var(--main-font);
+  font-size: 1.15em;
   height: 20%;
-  padding-top: 8%;
+  justify-content: left;
   padding-left: 8%;
 }
 
