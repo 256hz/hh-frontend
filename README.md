@@ -47,3 +47,6 @@ Tests are:
   - Is the filter list an object?
   - Is the filter list not a string?
   - Is the filter list correct?
+  
+### TO DO
+To make this really production ready, I'd create react-router routes for at least the filters, and maybe for each color.
