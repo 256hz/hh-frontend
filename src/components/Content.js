@@ -1,18 +1,21 @@
 import React from 'react';
+import { perPage } from '../constants'
 import Sidebar from './Sidebar'
 import Viewport from './Viewport'
 import '../App.css';
 
-// Main store of state & methods.  Change this.state.perPage to control how many swatches
-// are shown per page.  Receives the collection of filtered (or unfilitered) colors from
-// App.  Passes the heroColor prop down to ColorPage, which will trigger showing the hero
-// Swatch vs a page of colors.
+/* 
+  Main store of state & methods.  Change perPage in ../constants.js to control #/swatches
+  shown per page.  Receives the collection of filtered (or unfilitered) colors from App.  
+  Passes the heroColor prop down to ColorPage, which triggers showing the hero Swatch 
+  vs a page of colors.
+*/
 class Content extends React.Component {
   constructor(props) {
     super(props)
     this.state={
       page: 0,
-      perPage: 12,
+      perPage,
       pageList: [],
       colorsFiltered: [],
       currentPage: null,

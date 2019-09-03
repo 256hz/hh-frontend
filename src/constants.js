@@ -17,14 +17,15 @@ const constants = {
     'brown',
     'gray'
   ],
+  perPage: 12,
   functions: {
+    fetchColors: () => axios
+                        .get(constants.apiUrl)
+                        .catch( console.log )
     // Test functions
     // add: (num1, num2) => num1 + num2,
     // isNull: () => null,
     // isFalsy: () => undefined,
-    fetchColors: () => axios
-                        .get(constants.apiUrl)
-                        .catch( console.log )
     
   }
 }

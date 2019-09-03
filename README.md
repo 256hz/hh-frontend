@@ -42,8 +42,8 @@ Tests are:
   - Does the first record the API returns have all the proper keys?
   - Navigate to the page and click Random.  Does a hero swatch show?
   - Click the Red filter.  Are all the swatches in the red family?
-  - Click the Red filter again.  Are the number of red swatches less than 12?
+  - Click the Red filter again to disable.  Is each swatch red?  (Hopefully not.)
 - constants.test.js
-  - is the filter list an object?
-  - is the filter list not a string?
-  - is the filter list correct?
+  - Is the filter list an object?
+  - Is the filter list not a string?
+  - Is the filter list correct?
